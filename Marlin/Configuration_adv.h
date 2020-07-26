@@ -1053,7 +1053,7 @@
    * LED Control Menu
    * Add LED Control to the LCD menu
    */
-  #define LED_CONTROL_MENU                                                       // uncommented by Nux
+//#define LED_CONTROL_MENU                                                       //    DEBUG      by Nux build is throwing errors related to this so I'm commenting out, more research needed !!!!!!!!!!!
   #if ENABLED(LED_CONTROL_MENU)
     #define LED_COLOR_PRESETS                 // Enable the Preset Color menu option
     #if ENABLED(LED_COLOR_PRESETS)
