@@ -666,11 +666,11 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_INVERTING true                                              //  Changed by Nux according to TH3D guide    was false
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true                                       //  Changed by Nux according to TH3D guide    was false
 
 /**
  * Stepper Drivers
@@ -835,11 +835,12 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION                                                          // Uncommented by Nux
 
-//===========================================================================
-//============================= Z Probe Options =============================
-//===========================================================================
+//============================= !!!!!!!!!!!!!!!!!!!!!!!!!                      !!!!!!!!!!!!!!!!!!!!!!!!! =============================
+//============================= !!!!!!!!!!!!!!!!!!!!!!!!!    Z Probe Options   !!!!!!!!!!!!!!!!!!!!!!!!! =============================
+//============================= !!!!!!!!!!!!!!!!!!!!!!!!!                      !!!!!!!!!!!!!!!!!!!!!!!!! =============================
+//      GOOD RESOURCE FOR EZABL :  https://support.th3dstudio.com/hc/en-us/articles/360043293552-EZABL-Firmware-Setup-for-Vanilla-Marlin
 // @section probes
 
 //
@@ -851,7 +852,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN                                                                      //    Look harder at this !!!!!!!!!!!!!!!!!!!!!!!!!!!!  by Nux
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN                           //     by Nux  according to Marlin Docs this is correct for EZABL also mentioned in TH3D guide
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
@@ -893,7 +894,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-//#define FIX_MOUNTED_PROBE
+#define FIX_MOUNTED_PROBE                                             // Uncommented by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -987,20 +988,23 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET {-52, -12, 0 }         // by Nux    see below comment   
+//  Changed by Nux for what TH3D call an "OEM type mount" the numbers were actually from a reddit post as I could
+//  not understand where the OEM for ENDER3 numbers were in the configuration_backend.h that TH3D talks about
+//   https://www.reddit.com/r/ender3/comments/dpr3ax/skr_v13_tmc2209s_and_ezabl/        was { 10, 10, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 10                                  // by Nux, this appears to be the old MIN_PROBE_EDGE setting you see in guides often set to 30,  I'll leave at 10 and test first though.
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 8000
+#define XY_PROBE_SPEED 8000                                // no changes by Nux   this setting is mentioned as correct by the TH3D guide
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z              // no changes by Nux   this setting is mentioned as correct by the TH3D guide
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)       // no changes by Nux   this setting is mentioned as correct by the TH3D guide
 
 /**
  * Multiple Probing
@@ -1011,7 +1015,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 2                              // Uncommented by Nux for EZABL according to TH3D Guide this is correct        
 //#define EXTRA_PROBING    1
 
 /**
@@ -1028,19 +1032,19 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
-//#define Z_AFTER_PROBING           5 // Z position after probing is done
+#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow         ** changed by Nux for EZABL according to TH3D Guide this setting should be 5 
+#define Z_CLEARANCE_BETWEEN_PROBES  3 // Z Clearance between probe points    ** changed by Nux for EZABL according to TH3D Guide this setting should be 3
+#define Z_CLEARANCE_MULTI_PROBE     3 // Z Clearance between multiple probes ** changed by Nux for EZABL according to TH3D Guide this setting should be 3
+#define Z_AFTER_PROBING             5 // Z position after probing is done    ** uncommented by Nux for EZABL according to TH3D Guide this setting should be 5
 
-#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -3 // Farthest distance below the trigger-point to go before stopping    ** changed by Nux for EZABL according to TH3D Guide this setting should be -3
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -20
-#define Z_PROBE_OFFSET_RANGE_MAX 20
+#define Z_PROBE_OFFSET_RANGE_MIN -5            // changed by Nux for EZABL according to TH3D Guide this setting should be -5
+#define Z_PROBE_OFFSET_RANGE_MAX  1            // changed by Nux for EZABL according to TH3D Guide this setting should be 1
 
 // Enable the M48 repeatability test to test probe accuracy
-//#define Z_MIN_PROBE_REPEATABILITY_TEST
+#define Z_MIN_PROBE_REPEATABILITY_TEST       // uncommented by Nux for EZABL according to TH3D Guide
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -1055,7 +1059,7 @@
  * These options are most useful for the BLTouch probe, but may also improve
  * readings with inductive probes and piezo sensors.
  */
-//#define PROBING_HEATERS_OFF       // Turn heaters off when probing
+#define PROBING_HEATERS_OFF       // Turn heaters off when probing   ** Uncommented by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
 #if ENABLED(PROBING_HEATERS_OFF)
   //#define WAIT_FOR_BED_HEATER     // Wait for bed to heat back up between probes (to improve accuracy)
 #endif
@@ -1148,7 +1152,7 @@
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
-  #define MIN_SOFTWARE_ENDSTOP_Z
+  //#define MIN_SOFTWARE_ENDSTOP_Z                              ** Commented out by Nux according to TH3D guide
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
@@ -1234,7 +1238,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR      // uncommented by Nux for EZABL according to TH3D Guide
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1242,7 +1246,8 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+//#define RESTORE_LEVELING_AFTER_G28                                               **  thoughts by Nux below
+// TH3D guide warns against using this feature, but in the reddit post i've referenced in other comments you see they are using it....   so not sure on this one, Nux
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1281,8 +1286,8 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
-  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+  #define GRID_MAX_POINTS_X 3                                       // no changes by Nux this lines up with what the TH3D guide suggests for EZABL
+  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X                       // no changes by Nux this lines up with what the TH3D guide suggests for EZABL
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
@@ -1291,7 +1296,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID                   // uncommented by Nux for EZABL according to TH3D Guide
 
     //
     // Experimental Subdivision of the grid by Catmull-Rom method.
@@ -1385,7 +1390,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing.
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING                 // uncommented by Nux for EZABL according to TH3D Guide
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
@@ -1394,7 +1399,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (8*60)                          // Changed for EZABL by Nux according to TH3D guide   was (4*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -1471,7 +1476,7 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-#define EEPROM_SETTINGS     // Persistent storage with M500 and M501                        // uncommented by Nux
+#define EEPROM_SETTINGS     // Persistent storage with M500 and M501                        // uncommented by Nux  according to TH3D guide and BTT example
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
@@ -1768,7 +1773,7 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-//#define INDIVIDUAL_AXIS_HOMING_MENU
+#define INDIVIDUAL_AXIS_HOMING_MENU               // Uncommented for EZABL by Nux as suggested in TH3D guide
 
 //
 // SPEAKER/BUZZER
