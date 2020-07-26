@@ -751,7 +751,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }           // Changed by Nux
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 418 }           // Changed by Nux E0 set to 418 for Tital Clone by TH3D (results of calibration tests). 
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1098,7 +1098,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR false                                // changed by Nux for use of TH3D Titan Clone with Pancake Stepper     was true in BTT example
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1152,7 +1152,7 @@
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
-  //#define MIN_SOFTWARE_ENDSTOP_Z                              ** Commented out by Nux according to TH3D guide
+  //#define MIN_SOFTWARE_ENDSTOP_Z                              ** Commented out for EZABL by Nux according to TH3D guide
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
@@ -1476,7 +1476,7 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
-#define EEPROM_SETTINGS     // Persistent storage with M500 and M501                        // uncommented by Nux  according to TH3D guide and BTT example
+#define EEPROM_SETTINGS     // Persistent storage with M500 and M501                        // uncommented by Nux for EZABL according to TH3D guide and BTT example
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
 #define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
