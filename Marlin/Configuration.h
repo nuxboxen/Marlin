@@ -666,11 +666,11 @@
 // Mechanical endstop with COM to ground and NC to Signal uses "false" here (most common setup).
 #define X_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_INVERTING true                                              //  Changed by Nux according to TH3D guide    was false
+#define Z_MIN_ENDSTOP_INVERTING true                                              //  Changed for EZABL by Nux according to TH3D guide    was false
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define Z_MIN_PROBE_ENDSTOP_INVERTING true                                       //  Changed by Nux according to TH3D guide    was false
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true                                       //  Changed for EZABL by Nux according to TH3D guide    was false
 
 /**
  * Stepper Drivers
@@ -852,7 +852,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN                           //     by Nux  according to Marlin Docs this is correct for EZABL also mentioned in TH3D guide
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN                           //    changed for EZABL by Nux  according to Marlin Docs this is correct for EZABL also mentioned in TH3D guide
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
@@ -894,7 +894,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-#define FIX_MOUNTED_PROBE                                             // Uncommented by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
+#define FIX_MOUNTED_PROBE                                             // Uncommented for EZABL by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -988,7 +988,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET {-52, -12, 0 }         // by Nux    see below comment   
+#define NOZZLE_TO_PROBE_OFFSET {-52, -12, 0 }         //  changed for EZABL by Nux    see below comment   
 //  Changed by Nux for what TH3D call an "OEM type mount" the numbers were actually from a reddit post as I could
 //  not understand where the OEM for ENDER3 numbers were in the configuration_backend.h that TH3D talks about
 //   https://www.reddit.com/r/ender3/comments/dpr3ax/skr_v13_tmc2209s_and_ezabl/        was { 10, 10, 0 }
@@ -998,13 +998,13 @@
 #define PROBING_MARGIN 10                                  // by Nux, this appears to be the old MIN_PROBE_EDGE setting you see in guides often set to 30,  I'll leave at 10 and test first though.
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 8000                                // no changes by Nux   this setting is mentioned as correct by the TH3D guide
+#define XY_PROBE_SPEED 8000                                // no changes for EZABL by Nux   this setting is mentioned as correct by the TH3D guide
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z              // no changes by Nux   this setting is mentioned as correct by the TH3D guide
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z              // no changes for EZABL by Nux   this setting is mentioned as correct by the TH3D guide
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)       // no changes by Nux   this setting is mentioned as correct by the TH3D guide
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)       // no changes for EZABL by Nux   this setting is mentioned as correct by the TH3D guide
 
 /**
  * Multiple Probing
@@ -1059,7 +1059,7 @@
  * These options are most useful for the BLTouch probe, but may also improve
  * readings with inductive probes and piezo sensors.
  */
-#define PROBING_HEATERS_OFF       // Turn heaters off when probing   ** Uncommented by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
+#define PROBING_HEATERS_OFF       // Turn heaters off when probing   ** Uncommented for EZABL by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
 #if ENABLED(PROBING_HEATERS_OFF)
   //#define WAIT_FOR_BED_HEATER     // Wait for bed to heat back up between probes (to improve accuracy)
 #endif
