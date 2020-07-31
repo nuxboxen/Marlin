@@ -988,10 +988,17 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET {-52, -12, 0 }         //  changed for EZABL by Nux    see below comment   
-//  Changed by Nux for what TH3D call an "OEM type mount" the numbers were actually from a reddit post as I could
-//  not understand where the OEM for ENDER3 numbers were in the configuration_backend.h that TH3D talks about
-//   https://www.reddit.com/r/ender3/comments/dpr3ax/skr_v13_tmc2209s_and_ezabl/        was { 10, 10, 0 }
+
+//                               NUX          CHANGES FOR CUSTOM PROBE MOUNTS BELOW             NUX
+//                                                  
+//                             !!!!             NEVER CHANGE THE Z NUMBER FROM 0                 !!!!
+
+#define NOZZLE_TO_PROBE_OFFSET {-46, -5, 0 }         //  changed for EZABL by Nux  ; these particular settings are only
+//  correct for my particular custom probe mount that I made.  I believe if you using what TH3D call an "OEM type mount" 
+//the numbers should be {-56,-12,0}  TH3D  in their guide for the SKR board suggest that the configuration_backend.h in
+//their unified firmare contain the offsets for the OEM and other common probes but I could not find them, instad I found
+//a reddit post that suggested the{-56,-12,0}  https://www.reddit.com/r/ender3/comments/dpr3ax/skr_v13_tmc2209s_and_ezabl/  
+//  default    was { 10, 10, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
