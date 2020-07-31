@@ -1144,7 +1144,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 235                          // changed by Nux for typical Ender3   default was 200
-#define Y_BED_SIZE 235                          // changed by Nux for typical Ender3   default was 200
+#define Y_BED_SIZE 225                          // changed by Nux to try and stop y axis crash during bed leveling   default was 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1350,7 +1350,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 30          // Set Mesh bounds as an inset region of the bed      changed by Nux seemed to close to edge    default was 10
+  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed         Note by Nux: I tried changing this but it didn't seem to have any effect    default is 10
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
