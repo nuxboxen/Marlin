@@ -1,9 +1,44 @@
-#               WARNING        
-#    IF YOU ARE SEEING THIS PLEASE STOP !!!!
-# YOUR ARE CURRENTLY ON THE ORIGIN MASTER 2.0.X
+#  WANT TO BUILD FIRMWARE FOR YOUR SKR Mini E3 V2.0?
+#                    WARNING        
+#      IF YOU ARE SEEING THIS PLEASE STOP !!!!
+#     YOUR ARE CURRENTLY ON THE MASTER 2.0.X BRANCH
 #
-# FOR NUX'S PERSONAL BUILD YOU NEED TO CHANGE TO:
-#              BUGFIX BRANCH 
+#   FOR NUX'S PERSONAL BUILD YOU NEED TO CHANGE TO:
+#                 BUGFIX BRANCH 
+#
+# What the hell is this?:
+Hi my name is Nux and I have an Ender3 3d Printer,
+like most Ender3's mine has has some parts swapped
+out for upgraded parts including the mainboard by
+BigTreeTech called the SKR Mini E3 V2.0 
+
+The reason I made this public is because there
+are no complete explanations on how to use the
+SKR Mini E3 V2.0 with the TH3D EZABL or EZABL Pro
+which is a popular Bed Leveling setup.  Unfortunately
+TH3D's unified software can not be compiles for
+the 32 bit chip on the SKR boards.  
+
+If you are a development hero or chip designer this
+is not likely something you would need.  But for 
+people who aren't setting up build enviornments all 
+the time this might just help you get to your end
+goal of a working Ender 3 SKR Mini E3 v2.0 with EZABL
+Bed Leveling.
+
+#       Getting Your Build Enviornment
+
+Your Goal:  Install VS Code   then
+            Install the PlatformIO extension
+
+This is a straight forward process that anyone should
+be able to accomplish.  If you need some extra guidance
+there are tons of YouTube videos on getting VSCode installed
+and installing an extension.  In this case the PlatformIO
+extension.
+
+          
+
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
