@@ -1,4 +1,9 @@
-# Marlin 3D Printer Firmware
+#               WARNING        
+#    IF YOU ARE SEEING THIS PLEASE STOP !!!!
+# YOUR ARE CURRENTLY ON THE ORIGIN MASTER 2.0.X
+#
+# FOR NUX'S PERSONAL BUILD YOU NEED TO CHANGE TO:
+#              BUGFIX BRANCH 
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
