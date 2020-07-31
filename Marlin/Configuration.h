@@ -1,5 +1,14 @@
 /**
  *                        Nux Boxen Personal Config for Ender3
+ * 
+ *    I've Tried to comment every change and in that comment add a keyword
+ *    that will help you find the associated hardware so you can use crtl-f
+ *    to find all the changes related to that hardware.
+ * 
+ *     EZABL   ==   Any changes made for the EZABL or EZABL Pro
+ *     TITAN   ==   Any changes made for TH3D clone of Titan using pancake stepper
+ *     Nux     ==   Search for this and you'll find every change made in general
+ * 
  * Marlin 3D Printer Firmware
  * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -1341,7 +1350,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 30          // Set Mesh bounds as an inset region of the bed      changed by Nux seemed to close to edge    default was 10
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
