@@ -1002,7 +1002,7 @@
 //                                                  
 //                             !!!!             NEVER CHANGE THE Z NUMBER FROM 0                 !!!!
 
-#define NOZZLE_TO_PROBE_OFFSET {-60, -5, 0 }         //  changed for EZABL by Nux  ; these particular settings are only
+#define NOZZLE_TO_PROBE_OFFSET {-46, -5, 0 }         //  changed for EZABL by Nux  ; these particular settings are only
 //  correct for my particular custom probe mount that I made.  I believe if you using what TH3D call an "OEM type mount" 
 //the numbers should be {-56,-12,0}  TH3D  in their guide for the SKR board suggest that the configuration_backend.h in
 //their unified firmare contain the offsets for the OEM and other common probes but I could not find them, instad I found
@@ -1143,8 +1143,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 235                          // changed by Nux for typical Ender3   default was 200
-#define Y_BED_SIZE 235                          // changed by Nux for typical Ender3   default was 200
+#define X_BED_SIZE 230                          // changed by Nux backed this number off 5mm from typical Ender3 just becasue I like a little margain of error   default was 200
+#define Y_BED_SIZE 208                          // changed by Nux for my particular Ender 3 only has about 210mm of Y   default was 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
