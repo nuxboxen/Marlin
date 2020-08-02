@@ -1,42 +1,78 @@
 ![Banner Image](https://imgur.com/1A545RY.png)
-#  WANT TO BUILD FIRMWARE FOR YOUR SKR Mini E3 V2.0?
-#                    WARNING        
-#      IF YOU ARE SEEING THIS PLEASE STOP !!!!
-#     YOUR ARE CURRENTLY ON THE MASTER 2.0.X BRANCH
-#
-#   FOR NUX'S PERSONAL BUILD YOU NEED TO CHANGE TO:
-#                 BUGFIX BRANCH 
-#
-# What the hell is this?:
-Hi my name is Nux and I have an Ender3 3d Printer,
-like most Ender3's mine has has some parts swapped
-out for upgraded parts including the mainboard by
-BigTreeTech called the SKR Mini E3 V2.0 
+#               Choose a Path 
 
-The reason I made this public is because there
-are no complete explanations on how to use the
-SKR Mini E3 V2.0 with the TH3D EZABL or EZABL Pro
-which is a popular Bed Leveling setup.  Unfortunately
-TH3D's unified software can not be compiles for
-the 32 bit chip on the SKR boards.  
+1. I've downloaded a couple .zip files from Github
+    before but otherwise it just looks like shit I
+    don't have an interest in, I just want to flash my
+    SKR MiniE3 V2 that works with my EZABL and get the
+    hell away from all this elite developer garbage.
+    Give me a file!!!
+2. I think it would be cool to get my hands on all the source
+    files for Marlin and have a good base setup for my
+    EZABL, maybe even make a few tweeks to the config 
+    files myself and then compile the source into a binary
+    myself.  This isn't that big of a deal but could you
+    explain a little more about exactly what you've got
+    going on here Nux.
+3. Linus Torvalds takes coding lessongs from me and all 
+   of you incel 3d printer people need to RTFM how dare
+   you even visit github you don't even know what a repo is...
 
-If you are a development hero or chip designer this
-is not likely something you would need.  But for 
-people who aren't setting up build enviornments all 
-the time this might just help you get to your end
-goal of a working Ender 3 SKR Mini E3 v2.0 with EZABL
-Bed Leveling.
 
-#       Getting Your Build Enviornment
 
-Your Goal:  Install VS Code   then
-            Install the PlatformIO extension
+#             PATH 1  (GIVE ME THE .BIN FILE!)
 
-This is a straight forward process that anyone should
-be able to accomplish.  If you need some extra guidance
-there are tons of YouTube videos on getting VSCode installed
-and installing an extension.  In this case the PlatformIO
-extension.
+Ok ok,  all you need to do is download the .zip file from
+the page you are currently on.  Scroll up a little and find
+the Green Button that says "Code" click the button and choose
+the bottom option "Download ZIP"  and save that zip file
+like you would any other downloaded file.   Once you have
+the file on your system you'll need to open the file.  
+You'll know you're there when you see directories like "buildroot"
+"docs" and "Marlin" amongst other files.   The file you are looking
+for is called SKRmE3v2-EZABL-firmaere.bin  Move/Copy this file
+to your 3DPrinters SDCard so it resides where firmware.CUR does.
+MOST IMPORTANT --  you have to rename SKRmE3v2-EZABL-firmaere.bin
+to firmware.bin  THEN eject he SDcard and put it back in your
+powered off 3D printer and then power it on.   If you see an error
+about EEPROM not matching that is not a problem.  The printer is 
+fully functional proceed with connecting it to octopi/octoprint or
+pronterface and use the terminal to connect to your 3d printer to
+issue a m502 command to clear EEPROM then a m500 to save, that'll get 
+you back to an EEProm with default settings.  Now your printer
+will behave just like the EZABL videos show and you can follow
+TH3D's video on how to set the probe offset. 
+
+Please Realise:  Because this is a .bin file you've downloaded
+                 and flashed you are stuck with alot of choices 
+                 that I made for you.  There are still lots of
+                 options you can set through m codes and the
+                 control menus but some of the deeper options 
+                 of the firmware can't be changed at this point.
+                 If you need to do some of those type of changes
+                 you're going to have to follow path 2 and 
+                 complile a .bin yourself.
+
+#             PATH 2  (LET'S COMPILE A BIN FILE!!!)             
+
+OK, first let's talk about the this repository which this is "fork" of
+Marlin has several "branches" of the code, just think of each branch as a
+seperate copy that is in a different state of change then the other "branches"
+If you scroll back up this page you'll see a button that has a branch symbol
+and "2.0.x"  What that button is telling you is that you are currently on the
+"2.0.x branch"  here's the thing that's not the branch we want to be using
+we wan't to use "bugfix-2.0x" when we switch to that branch you'll see that
+the file you are reading README.md will actually change to a different page
+because that branch is a completely different copy of the files.  So to find
+the rest of the directions switch the branch to "bugfix-2.0.x" and you'll
+find a README.md with the rest of the directions for PATH 2.  See you there...
+
+
+#             PATH 3  (I'M WAY SMARTER THEN YOU NUX)
+
+Hey congratulations on your achievments in life, sorry this project seems
+so elementary but it works.  If we ever cross paths I'll buy you lunch and
+have a hundred questions for you.
 
           
 
