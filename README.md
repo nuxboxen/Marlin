@@ -1,3 +1,4 @@
+![Imgur](https://imgur.com/1A545RY)
 #  WANT TO BUILD FIRMWARE FOR YOUR SKR Mini E3 V2.0?
 #                    WARNING        
 #      IF YOU ARE SEEING THIS PLEASE STOP !!!!
