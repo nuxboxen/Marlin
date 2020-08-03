@@ -1,20 +1,20 @@
 ![Banner Image](https://imgur.com/1A545RY.png)
 #               Choose a Path 
 
-1. I've downloaded a couple .zip files from Github
+**PATH 1.** I've downloaded a couple .zip files from Github
     before but otherwise it just looks like shit I
     don't have an interest in, I just want to flash my
     SKR MiniE3 V2 that works with my EZABL and get the
     hell away from all this elite developer garbage.
     Give me a file!!!
-2. I think it would be cool to get my hands on all the source
+**PATH 2.** I think it would be cool to get my hands on all the source
     files for Marlin and have a good base setup for my
     EZABL, maybe even make a few tweeks to the config 
     files myself and then compile the source into a binary
     myself.  This isn't that big of a deal but could you
     explain a little more about exactly what you've got
     going on here Nux.
-3. Linus Torvalds takes coding lessongs from me and all 
+**PATH 3.** Linus Torvalds takes coding lessongs from me and all 
    of you incel 3d printer people need to RTFM how dare
    you even visit github you don't even know what a repo is...
 
@@ -26,22 +26,22 @@ Ok ok,  all you need to do is download the .zip file from
 the page you are currently on.  Scroll up a little and find
 the Green Button that says "Code" click the button and choose
 the bottom option "Download ZIP"  and save that zip file
-like you would any other downloaded file.   Once you have
-the file on your system you'll need to open the file.  
-You'll know you're there when you see directories like "buildroot"
-"docs" and "Marlin" amongst other files.   The file you are looking
-for is called SKRmE3v2-EZABL-firmaere.bin  Move/Copy this file
-to your 3DPrinters SDCard so it resides where firmware.CUR does.
-MOST IMPORTANT --  you have to rename SKRmE3v2-EZABL-firmaere.bin
-to firmware.bin  THEN eject he SDcard and put it back in your
-powered off 3D printer and then power it on.   If you see an error
-about EEPROM not matching that is not a problem.  The printer is 
-fully functional proceed with connecting it to octopi/octoprint or
-pronterface and use the terminal to connect to your 3d printer to
-issue a m502 command to clear EEPROM then a m500 to save, that'll get 
-you back to an EEProm with default settings.  Now your printer
-will behave just like the EZABL videos show and you can follow
-TH3D's video on how to set the probe offset. 
+like you would any other downloaded file.   Open the zip and
+move SKR-EZABL-firmware.bin to your printers SDCard and rename
+it to firmware.bin.  Insert SDCard in you printer, power up and 
+the printer will replace it's firmware with the one you just added
+by itself.  
+
+*Note: If on first boot you see an error about EEPROM not matching
+that is not a problem.  Use the menu to reset to "factory defaults"
+(don't worry it's just clearing a few settings from your old setup)
+then choose "store settings" and the EEprom is ready to go.*
+
+You're up and running the new firmware now:  you can finish setting
+up the probe offsets, I recomment the video below for a good guide
+to all the steps you'll need to do after the firmware flash, just
+ignore their firmware flashing it doesn't work with the skr boards.
+[*Skip to 19:40* The Edge Of Tech EZABL howto](https://www.youtube.com/watch?v=8dYBvPl6wkU)
 
 Please Realise:  Because this is a .bin file you've downloaded
                  and flashed you are stuck with alot of choices 
@@ -55,17 +55,24 @@ Please Realise:  Because this is a .bin file you've downloaded
 
 #             PATH 2  (LET'S COMPILE A BIN FILE!!!)             
 
-OK, first let's talk about the this repository which this is "fork" of
-Marlin has several "branches" of the code, just think of each branch as a
+**So What Is This All About:**I'm going to use a little git terminology the name of this repository is "nuxboxen/Marlin' which is a "fork" of "MarlinFirmware/Marlin"
+that means it's a copy of the official Marlin firware source code for a person who
+is not part of the development team to do with as they like.  In this case
+all I'm doing is making changes in the configuration files and the README.md
+to allow for the use of the EZABL with the SKRMini E3 V2 board which is
+not documented well.
+
+**Branches:** Marlin has several "branches" of the code, just think of each branch as a
 seperate copy that is in a different state of change then the other "branches"
 If you scroll back up this page you'll see a button that has a branch symbol
 and "2.0.x"  What that button is telling you is that you are currently on the
 "2.0.x branch"  here's the thing that's not the branch we want to be using
-we wan't to use "bugfix-2.0x" when we switch to that branch you'll see that
+we wan't to use "bugfix-2.0x".  I put the precompiled .bin and this README.md 
+in this "2.0.x branch" to keep it simple for people on Path 1.   
 the file you are reading README.md will actually change to a different page
-because that branch is a completely different copy of the files.  So to find
+because that branch is a completely different copy of the files.  **So to find
 the rest of the directions switch the branch to "bugfix-2.0.x" and you'll
-find a README.md with the rest of the directions for PATH 2.  See you there...
+find a README.md with the rest of the directions for PATH 2.**  See you there...
 
 
 #             PATH 3  (I'M WAY SMARTER THEN YOU NUX)
