@@ -60,7 +60,20 @@ just extracted from the zip file.
 
 **You're Ready!**  at this point you're already setup to build the firmware, all you would
 need to do is click the little checkmark in the bottom blue bar and the build would start
-and when it completed you'd find your new firmware in .pio/build
+and when it completed you'd find your new firmware at .pio/build/STM32F103RC_btt_512K/firmware.bin
+
+**Yeah but I to comfigure something different then what you have**  Sounds fun, have at it...
+to make changes to the firmware you'll need to make changes in the Marlin/Configuration.h and
+Marlin Configuration_adv.h those files are fairly well documented with comments within the files
+themselves, if you need more info on a feature just give it a google.  
+
+**What is SKR-EZABL-TITAN-Nuxs-Personal-Configuration.h ?**  pretty self explanitory... that's
+my personal configuration as I have a geared extruder which needs a few firmware tweeks itself.
+Don't worry it won't be used when you build your firmware as long as you leave the names like
+they are,  the build only uses Configuration.h and Configuration_adv.h but you're welcome to
+take a look.
+
+
 
 
 
