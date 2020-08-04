@@ -1,9 +1,11 @@
 ![Banner Image](https://imgur.com/tIvjkiM.png)
 #               Choose a Path 
 
-**PATH 1  Give me a firmware.bin so I can leave**
-**PATH 2  Hey i want to tweek and recompile my own**
-**PATH 3  I'm smarter then you Nux you deserve pain**
+
+1. **Give me a firmware.bin so I can leave**
+2. **Hey i want to tweek and recompile my own**
+3. **This Project is Dumb**
+
 
 #             PATH 1  (GIVE ME THE .BIN FILE!)
 
