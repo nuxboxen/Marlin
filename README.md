@@ -3,7 +3,7 @@
 
 
 1. **Give me a firmware.bin so I can leave**
-2. **Hey i want to tweek and recompile my own**
+2. **I'd like to make some config changes myself and compile a firmware binary**
 3. **This Project is Dumb**
 
 
@@ -64,10 +64,11 @@ just extracted from the zip file.
 need to do is click the little checkmark in the bottom blue bar and the build would start
 and when it completed you'd find your new firmware at .pio/build/STM32F103RC_btt_512K/firmware.bin
 
-**Yeah but I to comfigure something different then what you have**  Sounds fun, have at it...
+**Yeah but I need to configure something different then what you have**  Sounds fun, have at it...
 to make changes to the firmware you'll need to make changes in the Marlin/Configuration.h and
 Marlin Configuration_adv.h those files are fairly well documented with comments within the files
-themselves, if you need more info on a feature just give it a google.  
+themselves, if you need more info on a feature just give it a google.  *Remember to save changes
+in the .h files before hitting the build button.*
 
 **What is SKR-EZABL-TITAN-Nuxs-Personal-Configuration.h ?**  pretty self explanitory... that's
 my personal configuration as I have a geared extruder which needs a few firmware tweeks itself.
@@ -75,16 +76,35 @@ Don't worry it won't be used when you build your firmware as long as you leave t
 they are,  the build only uses Configuration.h and Configuration_adv.h but you're welcome to
 take a look.
 
+**Compiler Warnings Associated with this build:** "Hey I hit build and yes it ended up saying
+SUCCESS but I saw some yellow text go by and this sounds like some scary stuff that went wrong,
+now what Nux?"  Well I'm not even close to a "coder" nor am I even remotely familiar with
+what these compiler warnings mean...  I do know this...  I list below the compiler warnings
+that I have always gotten with this build and I can tell you that the firmware works great for
+me.  I've done lots of prints and I just don't see any issues whatsoever with this firmware.
+So I'm going to say these are nothing to worry about, If you'd like to give me some insight into
+what they mean and if or how to fix them I'd be interested.
 
+*C:\Users\win\.platformio\packages\framework-arduinoststm32-maple\STM32F1\libraries\STM32ADC\src\utility\util_adc.c:10:30: warning: 'adc_result' initialized and declared 'extern'
+ extern volatile unsigned int adc_result = 0;
 
-
+C:\Users\win\.platformio\packages\framework-arduinoststm32-maple\STM32F1\libraries\FreeRTOS701\utility\port.c: In function 'xPortStartScheduler':
+Archiving .pio\build\STM32F103RC_btt_512K\lib554\libUSBComposite.a
+C:\Users\win\.platformio\packages\framework-arduinoststm32-maple\STM32F1\libraries\FreeRTOS701\utility\port.c:178:2: warning: implicit declaration of function 'systick_attach_callback' [-Wimplicit-function-declaration]
+  systick_attach_callback(&xPortSysTickHandler);
+  ^~~~~~~~~~~~~~~~~~~~~~~
+At top level:
+C:\Users\win\.platformio\packages\framework-arduinoststm32-maple\STM32F1\libraries\FreeRTOS701\utility\port.c:285:6: warning: 'prvSetupTimerInterrupt' defined but not used [-Wunused-function]
+ void prvSetupTimerInterrupt( void )*
 
 
 #             PATH 3  (I'M WAY SMARTER THEN YOU NUX)
 
-Hey congratulations on your achievments in life, sorry this project seems
-so elementary but it works.  If we ever cross paths I'll buy you lunch and
-have a hundred questions for you.
+Yeah I get it...  but hey your mom say's when she's done at my house she'll
+be home to cook you dinner.
+
+
+
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
