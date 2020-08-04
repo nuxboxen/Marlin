@@ -1,12 +1,11 @@
 /**
- *                        Nux Boxen Personal Config for Ender3
- * 
+ *            Ender3 with SKR ME3 V2 and EZABL   Configuration.h
+ *   
  *    I've Tried to comment every change and in that comment add a keyword
  *    that will help you find the associated hardware so you can use crtl-f
  *    to find all the changes related to that hardware.
  * 
  *     EZABL   ==   Any changes made for the EZABL or EZABL Pro
- *     TITAN   ==   Any changes made for TH3D clone of Titan using pancake stepper
  *     Nux     ==   Search for this and you'll find every change made in general
  * 
  * Marlin 3D Printer Firmware
@@ -81,7 +80,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Nux Boxen, SKR-mini-E3-V2.0)" // Who made the changes.     //changed by Nux
+#define STRING_CONFIG_H_AUTHOR "(Ender3, SKR-mini-E3-V2.0)" // Who made the changes.     //changed by Nux
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -478,7 +477,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP       80     // changed to 80 by Nux  was 150
+#define BED_MAXTEMP       80     // changed to 80 by Nux I don't believe that more then 80 is safe on these chinese beds, turn it higher if you feel differently stock Ender3 Pro would be 110
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -903,7 +902,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-#define FIX_MOUNTED_PROBE                                             // Uncommented for EZABL by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
+#define FIX_MOUNTED_PROBE                          // Uncommented for EZABL by Nux  according to Marlin Docs this is correct for my EZABL also mentioned in TH3D Guide
 
 /**
  * Use the nozzle as the probe, as with a conductive
@@ -1002,16 +1001,16 @@
 //                                                  
 //                             !!!!             NEVER CHANGE THE Z NUMBER FROM 0                 !!!!
 
-#define NOZZLE_TO_PROBE_OFFSET {-46, -5, 0 }         //  changed for EZABL by Nux  ; these particular settings are only
-//  correct for my particular custom probe mount that I made.  I believe if you using what TH3D call an "OEM type mount" 
+#define NOZZLE_TO_PROBE_OFFSET {-56, -12, 0 }         //   I believe if you using what TH3D call an "OEM type mount" 
 //the numbers should be {-56,-12,0}  TH3D  in their guide for the SKR board suggest that the configuration_backend.h in
 //their unified firmare contain the offsets for the OEM and other common probes but I could not find them, instad I found
 //a reddit post that suggested the{-56,-12,0}  https://www.reddit.com/r/ender3/comments/dpr3ax/skr_v13_tmc2209s_and_ezabl/  
-//  default    was { 10, 10, 0 }
+//  default    was { 10, 10, 0 }           
+//                             !!!!             NEVER CHANGE THE Z NUMBER FROM 0                 !!!!   
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10                                  // by Nux, this appears to be the old MIN_PROBE_EDGE setting you see in guides often set to 30,  I'll leave at 10 and test first though.
+#define PROBING_MARGIN 10                                  // by Nux, this appears to be the old MIN_PROBE_EDGE setting you see in guides often set to 30,  tried changing it, didn't seem to do anything...
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000                                // no changes for EZABL by Nux   this setting is mentioned as correct by the TH3D guide
@@ -1114,7 +1113,9 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false                                // changed by Nux for use of TH3D Titan Clone with Pancake Stepper     was true in BTT example
+#define INVERT_E0_DIR true                 // No changes from default by Nux  comment above is confusing to me but  test shows (Ender3 stock Extruder SET true)  (Titan Extruder SET false) 
+//                                            Basically if you're extruder is going the wrong way... change this from true to false.   default is true
+
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1144,7 +1145,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 230                          // changed by Nux backed this number off 5mm from typical Ender3 just becasue I like a little margain of error   default was 200
-#define Y_BED_SIZE 208                          // changed by Nux for my particular Ender 3 only has about 210mm of Y   default was 200
+#define Y_BED_SIZE 230
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1152,7 +1153,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 195                          // changed by Nux for TITAN extruder mounted above the extruder X/Extruder Carriage   default was 200
+#define Z_MAX_POS 200
 
 /**
  * Software Endstops
@@ -1551,7 +1552,7 @@
   #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
   //#define NOZZLE_PARK_X_ONLY          // X move only is required to park
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
-  #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance                   // Not sure if this is good   by Nux  !!!!!!!!!!!!!!!!!!!
+  #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance                   // seems ok  by Nux  !!!!!!!!!!!!!!!!!!!
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
@@ -2153,7 +2154,7 @@
 //
 //#define EXTENSIBLE_UI
 
-#if ENABLED(EXTENSIBLE_UI)                                                                                 //Not sure if this is good   by Nux !!!!!!!!!!!!!!!!!!
+#if ENABLED(EXTENSIBLE_UI)                                                                                 //Not sure: seems fine  by Nux !!!!!!!!!!!!!!!!!!
   //#define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display
 #endif
 

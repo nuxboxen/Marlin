@@ -1,5 +1,7 @@
 /**
- *                        Nux Boxen Personal Config for Ender3
+ *                  Ender3 with SKR ME3 V2 and EZABL   Configuration_adv.h
+ * 
+ * 
  * Marlin 3D Printer Firmware
  * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -2274,7 +2276,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      580             // changed by Nux was 800    (should I go lower... maybe it's a pancake...)
+    #define E0_CURRENT      580             // changed by Nux was 800
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
