@@ -13,9 +13,9 @@ Ok ok,  all you need to do is download the .zip file from
 the page you are currently on.  Scroll up a little and find
 the Green Button that says "Code" click the button and choose
 the bottom option "Download ZIP"  and save that zip file
-like you would any other downloaded file.   Open the zip and
-move SKR-EZABL-firmware.bin to your printers SDCard and rename
-it to firmware.bin.  Insert SDCard in you printer, power up and 
+like you would any other downloaded file.  **Find the file
+SKR-EZABL-firmware.bin** move it to your printers SDCard and **rename
+it to firmware.bin**  Insert SDCard in you printer, power up and 
 the printer will replace it's firmware with the one you just added
 by itself.  
 
