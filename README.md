@@ -58,24 +58,29 @@ Please Realise:  Because this is a .bin file you've downloaded
 
 #             PATH 2  (LET'S COMPILE A BIN FILE!!!)             
 
-**So What Is This All About:**I'm going to use a little git terminology the name of this repository is "nuxboxen/Marlin' which is a "fork" of "MarlinFirmware/Marlin"
-that means it's a copy of the official Marlin firware source code for a person who
-is not part of the development team to do with as they like.  In this case
-all I'm doing is making changes in the configuration files and the README.md
-to allow for the use of the EZABL with the SKRMini E3 V2 board which is
-not documented well.
+**Tools Needed:  VSCODE with PlatfromIO IDE extension**
+The main tool you'll need to compile this code is Visual Studio Code, here's
+[the official Visual Studio Code Download Page](https://code.visualstudio.com/download).  Once
+you have VSCode installed and running you'll see a icon on the right side tool bar that
+looks like four little squares (Extensions) click the Icon and search for "PlatformIO IDE"
+and install the extension.  That's it, don't even bother with the "Auto Build Marlin" extension
+I've already configured the files so you don't need it, it's more likely to confuse the situation
+then help.
 
-**Branches:** Marlin has several "branches" of the code, just think of each branch as a
-seperate copy that is in a different state of change then the other "branches"
-If you scroll back up this page you'll see a button that has a branch symbol
-and "2.0.x"  What that button is telling you is that you are currently on the
-"2.0.x branch"  here's the thing that's not the branch we want to be using
-we wan't to use "bugfix-2.0x".  I put the precompiled .bin and this README.md 
-in this "2.0.x branch" to keep it simple for people on Path 1.   
-the file you are reading README.md will actually change to a different page
-because that branch is a completely different copy of the files.  **So to find
-the rest of the directions switch the branch to "bugfix-2.0.x" and you'll
-find a README.md with the rest of the directions for PATH 2.**  See you there...
+**Ok my Tools are ready... what next?**  Look for the green "Code" button near the top 
+of this page, click it and choose the bottom option "Download ZIP" and save the zip file.
+
+**EXTRACT the files from the zip file**  we can't work with the files if they are in the 
+zip file, so you'll need to extract a copy of the files to some location on your computer.
+
+**Start VSCode;  Choose OPEN FOLDER**  and choose "Marlin-bugfix-2.0.x" folder that you
+just extracted from the zip file.
+
+**You're Ready!**  at this point you're already setup to build the firmware, all you would
+need to do is click the little checkmark in the bottom blue bar and the build would start
+and when it completed you'd find your new firmware in .pio/build
+
+
 
 
 #             PATH 3  (I'M WAY SMARTER THEN YOU NUX)
