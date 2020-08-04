@@ -1,27 +1,9 @@
 ![Banner Image](https://imgur.com/tIvjkiM.png)
 #               Choose a Path 
 
-# **PATH 1.**
- I've downloaded a couple .zip files from Github
-    before but otherwise it just looks like shit I
-    don't have an interest in, I just want to flash my
-    SKR MiniE3 V2 that works with my EZABL and get the
-    hell away from all this elite developer garbage.
-    Give me a file!!!
-# **PATH 2.** 
-I think it would be cool to get my hands on all the source
-    files for Marlin and have a good base setup for my
-    EZABL, maybe even make a few tweeks to the config 
-    files myself and then compile the source into a binary
-    myself.  This isn't that big of a deal but could you
-    explain a little more about exactly what you've got
-    going on here Nux.
-# **PATH 3.** 
-Hey I think this project is dumb and how dare you even
-    try to contribute anything without the blessing
-    of the Gods of 3D Printing..
-
-
+**PATH 1  Give me a firmware.bin so I can leave**
+**PATH 2  Hey i want to tweek and recompile my own**
+**PATH 3  I'm smarter then you Nux you deserve pain**
 
 #             PATH 1  (GIVE ME THE .BIN FILE!)
 
