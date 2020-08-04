@@ -24,13 +24,13 @@ that is not a problem.  Use the menu to reset to "factory defaults"
 (don't worry it's just clearing a few settings from your old setup)
 then choose "store settings" and the EEprom is ready to go.*
 
-You're up and running the new firmware now:  you can finish setting
-up the probe offsets, I recomment the video below for a good guide
+You're up and running the new firmware now:  you can **finish setting
+up the probe offsets**, I recomment the video below for a good guide
 to all the steps you'll need to do after the firmware flash, just
 ignore their firmware flashing it doesn't work with the skr boards.
 [*Skip to 19:40* The Edge Of Tech EZABL howto](https://www.youtube.com/watch?v=8dYBvPl6wkU)
 
-Please Realise:  Because this is a .bin file you've downloaded
+**Understand**:  Because this is a .bin file you've downloaded
                  and flashed you are stuck with alot of choices 
                  that I made for you.  There are still lots of
                  options you can set through m codes and the
@@ -49,7 +49,7 @@ you have VSCode installed and running you'll see a icon on the right side tool b
 looks like four little squares (Extensions) click the Icon and search for "PlatformIO IDE"
 and install the extension.  That's it, don't even bother with the "Auto Build Marlin" extension
 I've already configured the files so you don't need it, it's more likely to confuse the situation
-then help.
+then help.  **Go ahead and close VSCode for now.**
 
 **Ok my Tools are ready... what next?**  Look for the green "Code" button near the top 
 of this page, click it and choose the bottom option "Download ZIP" and save the zip file.
@@ -61,8 +61,8 @@ zip file, so you'll need to extract a copy of the files to some location on your
 just extracted from the zip file.
 
 **You're Ready!**  at this point you're already setup to build the firmware, all you would
-need to do is click the little checkmark in the bottom blue bar and the build would start
-and when it completed you'd find your new firmware at .pio/build/STM32F103RC_btt_512K/firmware.bin
+need to do is click the little **checkmark in the bottom blue bar** and the build would start
+and when it completed you'd find your new firmware at **.pio/build/STM32F103RC_btt_512K/firmware.bin**
 
 **Yeah but I need to configure something different then what you have**  Sounds fun, have at it...
 to make changes to the firmware you'll need to make changes in the Marlin/Configuration.h and
@@ -72,18 +72,18 @@ in the .h files before hitting the build button.*
 
 **What is SKR-EZABL-TITAN-Nuxs-Personal-Configuration.h ?**  pretty self explanitory... that's
 my personal configuration as I have a geared extruder which needs a few firmware tweeks itself.
-Don't worry it won't be used when you build your firmware as long as you leave the names like
+**Don't worry it won't be used when you build** your firmware as long as you leave the names like
 they are,  the build only uses Configuration.h and Configuration_adv.h but you're welcome to
 take a look.
 
 **Compiler Warnings Associated with this build:** "Hey I hit build and yes it ended up saying
 SUCCESS but I saw some yellow text go by and this sounds like some scary stuff that went wrong,
-now what Nux?"  Well I'm not even close to a "coder" nor am I even remotely familiar with
+now what Nux?"   *Well I'm not even close to a "coder" nor am I even remotely familiar with
 what these compiler warnings mean...  I do know this...  I list below the compiler warnings
 that I have always gotten with this build and I can tell you that the firmware works great for
 me.  I've done lots of prints and I just don't see any issues whatsoever with this firmware.
-So I'm going to say these are nothing to worry about, If you'd like to give me some insight into
-what they mean and if or how to fix them I'd be interested.
+**So I'm going to say these are nothing to worry about**, If you'd like to give me some insight into
+what they mean and if or how to fix them I'd be interested.*
 
 *C:\Users\win\.platformio\packages\framework-arduinoststm32-maple\STM32F1\libraries\STM32ADC\src\utility\util_adc.c:10:30: warning: 'adc_result' initialized and declared 'extern'
  extern volatile unsigned int adc_result = 0;
@@ -100,8 +100,7 @@ C:\Users\win\.platformio\packages\framework-arduinoststm32-maple\STM32F1\librari
 
 #             PATH 3  (I'M WAY SMARTER THEN YOU NUX)
 
-Yeah I get it...  but hey your mom say's when she's done at my house she'll
-be home to cook you dinner.
+Not much of an accomplisment...
 
 
 
