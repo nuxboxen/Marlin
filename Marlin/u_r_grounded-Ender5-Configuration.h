@@ -1035,7 +1035,7 @@
 #define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow       changed by Nux for EZABL
 #define Z_CLEARANCE_BETWEEN_PROBES  3 // Z Clearance between probe points    changed by Nux for EZABL
 #define Z_CLEARANCE_MULTI_PROBE     3 // Z Clearance between multiple probes   changed by Nux for EZABL
-#define Z_AFTER_PROBING           -3 // Z position after probing is done    changed by Nux for EZABL
+#define Z_AFTER_PROBING             5 // Z position after probing is done    changed by Nux for EZABL
 
 #define Z_PROBE_LOW_POINT          -3 // Farthest distance below the trigger-point to go before stopping      changed by Nux for EZABL
 
