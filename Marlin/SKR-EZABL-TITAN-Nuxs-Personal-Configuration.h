@@ -1533,6 +1533,10 @@
 #define PREHEAT_2_TEMP_BED     80                                                     // Changed to 80 by Nux becasue I have max bed at 80      was 110
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255                                 Changed to 255 by Nux  was 0
 
+#define PREHEAT_2_LABEL       "TPU95"
+#define PREHEAT_2_TEMP_HOTEND 230
+#define PREHEAT_2_TEMP_BED     60                                                     // Added by Nux
+#define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255                                 
 /**
  * Nozzle Park
  *
