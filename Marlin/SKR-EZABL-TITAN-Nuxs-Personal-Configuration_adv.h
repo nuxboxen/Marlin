@@ -2035,19 +2035,19 @@
  */
 #define ADVANCED_PAUSE_FEATURE                           // uncommented by Nux
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
-  #define PAUSE_PARK_RETRACT_FEEDRATE          6  // (mm/s) Initial retract feedrate.      //  changed by Nux   was 60
+  #define PAUSE_PARK_RETRACT_FEEDRATE          3  // (mm/s) Initial retract feedrate.      //  changed by Nux   was 60
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
                                                   // This short retract is done immediately, before parking the nozzle.
-  #define FILAMENT_CHANGE_UNLOAD_FEEDRATE      6  // (mm/s) Unload filament feedrate. This can be pretty fast.    //  changed by Nux   was 10
+  #define FILAMENT_CHANGE_UNLOAD_FEEDRATE      3  // (mm/s) Unload filament feedrate. This can be pretty fast.    //  changed by Nux   was 10
   #define FILAMENT_CHANGE_UNLOAD_ACCEL        25  // (mm/s^2) Lower acceleration may allow a faster feedrate.
-  #define FILAMENT_CHANGE_UNLOAD_LENGTH       55  // (mm) The length of filament for a complete unload.     //  changed by Nux   was 100
+  #define FILAMENT_CHANGE_UNLOAD_LENGTH       40  // (mm) The length of filament for a complete unload.     //  changed by Nux   was 100
                                                   //   For Bowden, the full length of the tube and nozzle.
                                                   //   For direct drive, the full length of the nozzle.
                                                   //   Set to 0 for manual unloading.
   #define FILAMENT_CHANGE_SLOW_LOAD_FEEDRATE   3  // (mm/s) Slow move when starting load.
   #define FILAMENT_CHANGE_SLOW_LOAD_LENGTH     5  // (mm) Slow length, to allow time to insert material.
                                                   // 0 to disable start loading and skip to fast load only
-  #define FILAMENT_CHANGE_FAST_LOAD_FEEDRATE   6  // (mm/s) Load filament feedrate. This can be pretty fast.
+  #define FILAMENT_CHANGE_FAST_LOAD_FEEDRATE   3  // (mm/s) Load filament feedrate. This can be pretty fast.
   #define FILAMENT_CHANGE_FAST_LOAD_ACCEL     25  // (mm/s^2) Lower acceleration may allow a faster feedrate.
   #define FILAMENT_CHANGE_FAST_LOAD_LENGTH    20  // (mm) Load length of filament, from extruder gear to nozzle. //  changed by Nux   was 0
                                                   //   For Bowden, the full length of the tube and nozzle.
@@ -2062,10 +2062,10 @@
   //#define ADVANCED_PAUSE_FANS_PAUSE             // Turn off print-cooling fans while the machine is paused.
 
                                                   // Filament Unload does a Retract, Delay, and Purge first:
-  #define FILAMENT_UNLOAD_PURGE_RETRACT       15  // (mm) Unload initial retract length.    //  changed by Nux   was 13
+  #define FILAMENT_UNLOAD_PURGE_RETRACT        3  // (mm) Unload initial retract length.    //  changed by Nux   was 13
   #define FILAMENT_UNLOAD_PURGE_DELAY       5000  // (ms) Delay for the filament to cool after retract.
-  #define FILAMENT_UNLOAD_PURGE_LENGTH         8  // (mm) An unretract is done, then this length is purged.
-  #define FILAMENT_UNLOAD_PURGE_FEEDRATE       6  // (mm/s) feedrate to purge before unload    //  changed by Nux   was 25
+  #define FILAMENT_UNLOAD_PURGE_LENGTH         2  // (mm) An unretract is done, then this length is purged.
+  #define FILAMENT_UNLOAD_PURGE_FEEDRATE       3  // (mm/s) feedrate to purge before unload    //  changed by Nux   was 25
 
   #define PAUSE_PARK_NOZZLE_TIMEOUT          180  // (seconds) Time limit before the nozzle is turned off for safety.    //  changed by Nux   was 45
   #define FILAMENT_CHANGE_ALERT_BEEPS          1  // Number of alert beeps to play when a response is needed.    //  changed by Nux   was 10
